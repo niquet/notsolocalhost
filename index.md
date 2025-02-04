@@ -1,7 +1,8 @@
 ---
-title: Welcome to my blog
+title: Not So Localhost
+layout: home
 ---
 
-# Integration Testing Go Microservices
+# Posts
 
-This is a test text.
+This is a test paragraph.
