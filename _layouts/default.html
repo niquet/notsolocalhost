@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <style>
+      .post-list {
+        list-style-type: none;
+        padding: 0;
+      }
+      
+      .post-list li {
+        margin-bottom: 10px;
+      }
+      
+      .post-meta {
+        display: inline-block;
+        width: 100px;
+        margin-right: 10px;
+      }
+      
+      .post-link {
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
     <div class="container-md px-3 my-5 markdown-body">
@@ -13,23 +33,18 @@
       <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
       {% endif %}
 
-      <main class="">
+      <main>
         {%- if site.posts.size > 0 -%}
-        {%- for post in posts -%}
-        <article>
-          <a class="mb-4" href="{{ post.url | absolute_url }}">
-            <h2>
-              {{- post.title -}}
-            </h2>
-            <p>
-              {{ post.date | date: '%B %-d, %Y' }}
-            </p>
-            <p>
-              {{- post.description -}}
-            </p>
-          </a>
-        </article>
-        {%- endfor -%}
+        <ul class="post-list">
+          {%- for post in site.posts -%}
+          <li>
+            <span class="post-meta">[{{ post.date | date: "%Y-%m-%d" }}]</span>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </li>
+          {%- endfor -%}
+        </ul>
         {%- endif -%}
       </main>
 
