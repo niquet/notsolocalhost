@@ -13,7 +13,25 @@
       <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
       {% endif %}
 
-      {{ content }}
+      <main class="">
+        {%- if site.posts.size > 0 -%}
+        {%- for post in posts -%}
+        <article>
+          <a class="mb-4" href="{{ post.url | absolute_url }}">
+            <h2>
+              {{- post.title -}}
+            </h2>
+            <p>
+              {{ post.date | date: '%B %-d, %Y' }}
+            </p>
+            <p>
+              {{- post.description -}}
+            </p>
+          </a>
+        </article>
+        {%- endfor -%}
+        {%- endif -%}
+      </main>
 
       {% if site.github.private != true and site.github.license %}
       <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
