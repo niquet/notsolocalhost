@@ -1,5 +1,5 @@
 ---
-title: Ctrl+Alt+Collaborate: Hybrid Mob Programming for a Professional Book Club
+title: "Ctrl+Alt+Collaborate: Hybrid Mob Programming for a Professional Book Club"
 date: 2025-02-06
 ---
 
