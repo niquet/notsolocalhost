@@ -1,3 +1,12 @@
-remote_theme: pages-themes/primer@v0.6.0
-plugins:
-- jekyll-remote-theme
+url: "https://127.0.0.1:4000" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "" # the name of your site, e.g. ACME Corp.
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+theme_config:
+  appearance: "auto" # can be "light", "dark" or "auto"
+  back_home_text: "< back" # ".." # customize text for homepage link in post layout

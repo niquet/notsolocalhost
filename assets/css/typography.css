@@ -1,0 +1,169 @@
+---
+--- 
+
+@font-face {
+    font-family: 'Hack Regular';
+    src: url('../fonts/hack.regular.ttf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bledek';
+    src: url('../fonts/Bledek.otf') format('opentype');
+    font-display: swap;
+}
+
+:root {
+    --font-primary: 'Hack Regular', sans-serif;
+    --font-logo: 'Bledek', sans-serif;
+    --font-size-base: clamp(16px, 1vw + 0.5rem, 20px);
+    --line-height-base: 1.5;
+    --paragraph-spacing: 2.0rem;
+
+    --color-primary: #333;
+    --color-secondary: #4078c0;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 2.0rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    /* letter-spacing: -0.04em; */
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw + 0.9rem, 3.5rem);
+}
+
+h3 {
+    font-size: clamp(1.6rem, 3vw + 0.8rem, 3rem);
+}
+
+h4 {
+    font-size: clamp(1.4rem, 2vw + 0.7rem, 2.5rem);
+}
+
+h5 {
+    font-size: clamp(1.2rem, 1.5vw + 0.6rem, 2rem);
+}
+
+h6 {
+    font-size: clamp(1rem, 1vw + 0.5rem, 1.5rem);
+}
+
+p {
+    margin-bottom: var(--paragraph-spacing);
+    
+    width: 100.00%;
+    max-width: 70ch;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: clamp(14px, 1vw + 0.5rem, 18px);
+        --line-height-base: 1.6;
+        --paragraph-spacing: 1.5rem;
+    }
+
+    /* h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        letter-spacing: -0.02em;
+    } */
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #004499;
+    text-decoration: underline;
+}
+
+ul,
+ol {
+    margin-bottom: var(--paragraph-spacing);
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #ccc;
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 4px;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* --- Special typography --- */
+
+.logo {
+    font-family: var(--font-logo);
+    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+
+    text-align: center;
+    /* border: 1px dotted green; */
+
+    color: var(--color-secondary);
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a:hover {
+    cursor: pointer;
+}

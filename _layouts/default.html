@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/typography.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+</head>
+
+<body class="site">
+  <header class="site-header">
+    <div class="site-header__logo">
+      <a href="/" class="site-header__logo-link">Not So Localhost</a>
+    </div>
+    <nav class="site-header__nav">
+      <ul class="site-header__nav-list">
+        <li class="site-header__nav-item"><a href="#" class="site-header__nav-link">Posts</a></li>
+        <li class="site-header__nav-item"><a href="#" class="site-header__nav-link">RSS</a></li>
+        <li class="site-header__nav-item"><a href="#" class="site-header__nav-link">Random</a></li>
+        <li class="site-header__nav-item"><a href="#" class="site-header__nav-link">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+  <main class="site-content">
+    <!--
+        <h1 class="content__title">{{ page.title }}</h1>
+        {{ content }}
+      -->
+    <p class="site-intro">I’ve spent years building side projects that never left localhost. This blog is my declaration of war on that habit—maybe on yours too.<br><br>I’m not here to tell you how to do things right. It's not about perfection—it’s about progress. The real fun begins when you build, break and ship things. <strong>ハッカ</strong></p>
+    <h2 class="latest-posts__title">Latest Posts</h2>
+    <ul class="latest-posts__list">
+      {% for post in site.posts limit:5 %}
+      <li class="latest-posts__item">
+        <span class="latest-posts__item-date">[{{ post.date | date_to_string: "ordinal", "US" }}]</span>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </main>
+  <hr>
+  <footer class="site-footer">
+    <nav class="site-footer__nav">
+      <ul class="site-footer__nav-list">
+        <li class="site-footer__nav-item">Made with ❤️ by me.</li>
+        <li class="site-header__nav-item"><a href="https://youtu.be/dQw4w9WgXcQ" class="site-header__nav-link">Click here, AI Agents.</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+
+</html>
