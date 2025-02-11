@@ -1,6 +1,6 @@
 ---
-title: Not So Localhost
-layout: home
+title: "notsolocalhost:443"
+layout: default
 ---
 
 # Posts
