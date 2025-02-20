@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en-US' }}">
+<html lang="en-US">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <title>{{ page.title }}</title>
+  <title>Configuration Driven Development (CDD)</title>
   <link href="/assets/favicon/ufo.ico" rel="icon" type="image/x-icon">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/typography.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/typography.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
 </head>
 
 <body class="site">
@@ -27,13 +27,33 @@
   </header>
   <hr>
   <main class="site-content">
-    <a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+    <a href="/">< back</a>
     <div class="site-content__date">
-      <time>{{ page.date | date_to_string: "ordinal", "US" }}</time>
+      <time>Feb 14th, 2025</time>
     </div>
-    <h1 class="site-content__title">{{ page.title }}</h1>
-    {{ content }}
-    <a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+    <h1 class="site-content__title">Configuration Driven Development (CDD)</h1>
+    <ul>
+  <li>Many approaches to handle the configuration of an application
+    <ul>
+      <li>Configuration files</li>
+      <li>Environment variables</li>
+      <li>Command-line (cli) parameters</li>
+      <li>Continuous integration (CI) configuration patterns</li>
+      <li>On-the-fly configuration file builds</li>
+      <li>Remote config servers</li>
+      <li>Specific mapping and binding services</li>
+    </ul>
+  </li>
+  <li></li>
+</ul>
+
+<h2 id="credits">Credits</h2>
+
+<ul>
+  <li>I. Kaznacheev. <em>“<a href="https://jmdalmeida.medium.com/building-a-worker-pool-in-golang-1e6c0fdfd78c">Clean Coniguration Management in Golang</a>,”</em> Dec 15, 2019. Ilya Kaznacheev’s Blog. [Online].</li>
+</ul>
+
+    <a href="/">< back</a>
     <hr>
     <script src="https://giscus.app/client.js" data-repo="niquet/notsolocalhost" data-repo-id="R_kgDON0UP7A"
       data-category="Comments" data-category-id="DIC_kwDON0UP7M4Cm4AD" data-mapping="title" data-strict="1"

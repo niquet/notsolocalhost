@@ -11,7 +11,8 @@ hr {
     background-color: #f5f5f5;
     height: 0.25rem;
 
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
+    margin-top: 2rem;
     margin-bottom: 3rem;
 
     max-width: 100.00%;
@@ -22,9 +23,16 @@ img {
 }
 
 .site {
-    max-width: 70ch;
+    /* max-width: 70ch; */
+    max-width: 680px;
     margin: 1.5rem auto;
     padding: 0 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .site {
+        padding: 0 1.5rem;
+    }
 }
 
 /* Header */
@@ -79,7 +87,14 @@ img {
 }
 
 .site-content__title {
-    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+    /* font-size: clamp(2rem, 5vw + 1rem, 4rem); */
+}
+
+.site-content__date {
+    color: #6A6A6A;
+    font-style: italic;
+    margin-top: 2rem;
+    margin-bottom: -1.5rem;
 }
 
 .site-intro {
@@ -92,7 +107,7 @@ img {
 .latest-posts__item {}
 
 .latest-posts__item-date {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 /* Footer */
