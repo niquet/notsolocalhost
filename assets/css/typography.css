@@ -109,7 +109,8 @@ a:hover {
 ul,
 ol {
     margin-bottom: var(--paragraph-spacing);
-    padding-left: 1.5rem;
+    list-style-position: outside;
+    padding-left: 2.25rem;
 }
 
 li {
@@ -120,7 +121,7 @@ li ul,
 li ol {
     margin-top: 0.75rem; /* Add space above nested lists */
     margin-bottom: 0.75rem; /* Add space below nested lists */
-    padding-left: 1.5rem; /* Maintain indentation for nested lists */
+    /* padding-left: 1.5rem; Maintain indentation for nested lists */
 }
 
 blockquote {
