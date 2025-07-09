@@ -15,21 +15,23 @@
         <div class="logo"><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></div>
         {% endif %}
         
-        <p>Ever nuked prod at 2 AM and discovered the docs never warned you? Perfect—that’s how you learn, fast.</p>
-        
-        <p>This isn’t a portfolio. It’s my digital scratchpad—a dumping ground for notes on what I’ve read and watched, half-baked ideas, hard-won lessons, and the occasional technical rant.</p>
+        <p>Welcome to my corner of the internet—ain't it fun to be off localhost?</p>
 
-        <p>A few things to live by when building systems:</p>
+        <p>Here you'll find explorations and notes that probably interest future-me more than anyone else.
+           I like to go deep—so don't expect frequent posts. I also break things occasionally that I have to fix.</p>
+
+        <p>Everything here reflects my personal opinions only. No paid content, no guest posts, no affiliate links.</p>
+
+        <p>A few things to live by:<p>
 
         <ul>
-            <li><strong>Keep it simple.</strong> (Complexity always sneaks in—fight it.)</li>
-            <li><strong>Break things, learn from it.</strong> (Mistakes are the tuition. Iterate. Improve.)</li>
-            <li><strong>Progress over perfection.</strong> (Shipping > sitting. Small wins add up.)</li>
-            <li><strong>Share your work.</strong> (Even if it’s mostly for future-you.)</li>
+            <li><strong>Be persistent.</strong> Most problems are solvable.</li>
+            <li><strong>Keep it simple.</strong> Complexity always sneaks in—fight it.</li>
+            <li><strong>Break things, learn from it.</strong> Make mistakes. Iterate. Improve.</li>
+            <li><strong>Progress over perfection.</strong> Shipping > sitting. Small wins add up.</li>
+            <li><strong>Share your work.</strong> Even if it’s mostly for future-you.</li>
         </ul>
-
-        <p>Curious? Call me out in the comments, drop a question, or just say hi—especially if you want to talk backend.</p>
-
+      
         <h2 class="">Latest Posts</h2>
         <ul class="">
         {% for post in site.posts limit:10 %}
@@ -39,11 +41,6 @@
         </li>
         {% endfor %}
         </ul>
-
-        {% if site.github.private != true and site.github.license %}
-        <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
-        </div>
-        {% endif %}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
