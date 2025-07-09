@@ -1,0 +1,330 @@
+---
+---
+
+@import "jekyll-theme-primer";
+
+/* --- Custom fonts --- */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0-ExcOPIDUg-g.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0aExcOPIDUg-g.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0yExcOPIDUg-g.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0KExcOPIDU.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/ptsans/v17/jizfRExUiTo99u79B_mh0OOtLR8a8zILig.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/ptsans/v17/jizfRExUiTo99u79B_mh0OqtLR8a8zILig.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/ptsans/v17/jizfRExUiTo99u79B_mh0OCtLR8a8zILig.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/ptsans/v17/jizfRExUiTo99u79B_mh0O6tLR8a8zI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* --- Variables for easy theming --- */
+:root {
+  --body-font: "PT Sans", sans-serif;
+  --mono-font: consolas, monospace, ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --body-text-color: #24292f;
+  --body-bg-color: #fff;
+  --link-color: #0969da;
+  --link-hover: #054289;
+  --muted-text: #6a737d;
+  --border-color: #d0d7de;
+  --code-bg: #f6f8fa;
+  --code-border: #d0d7de;
+  --blockquote-bg: #f6f8fa;
+  --blockquote-border: #d0d7de;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-text-color: #e6edf3;
+    --body-bg-color: #0d1117;
+    --link-color: #58a6ff;
+    --link-hover: #1f6feb;
+    --muted-text: #8b949e;
+    --border-color: #30363d;
+    --code-bg: #161b22;
+    --code-border: #30363d;
+    --blockquote-bg: #161b22;
+    --blockquote-border: #30363d;
+  }
+}
+
+/* --- Layout --- */
+
+body {
+  font-family: var(--body-font);
+  color: var(--body-text-color);
+  background: var(--body-bg-color);
+  font-size: 14px !important;
+  line-height: 1.6;
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem 0.5rem;
+    font-size: 16px;
+  }
+}
+
+.back {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* --- Typography --- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--body-font);
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  color: var(--body-text-color);
+
+  border-bottom: 0 !important;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: 0.95rem; }
+h6 { font-size: 0.9rem; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+  color: var(--link-hover);
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+em, i {
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  margin: 2.5rem 0;
+}
+
+/* --- Lists --- */
+ul, ol {
+  margin-left: 0.25em;
+  margin-bottom: 1em;
+  padding-left: 1.2em;
+}
+
+li {
+  margin-bottom: 0.25em;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+  color: var(--muted-text);
+  border-left: 0.25em solid var(--blockquote-border);
+  padding: 0.5em 1em;
+  margin: 1.5em 0;
+  background: var(--blockquote-bg);
+  border-radius: 6px;
+}
+
+/* --- Code and Pre --- */
+code, kbd, samp {
+  font-family: var(--mono-font);
+  font-size: 0.95em;
+  background: var(--code-bg);
+  border-radius: 6px;
+  padding: 0.2em 0.4em;
+  // border: 1px solid var(--code-border);
+  color: #1a1a1a;
+}
+
+pre {
+  font-family: var(--mono-font);
+  background: var(--code-bg);
+  // border: 1px solid var(--code-border);
+  border: 0;
+  border-radius: 5px;
+  padding: 1em;
+  overflow-x: auto;
+  font-size: 0.95em;
+  margin-bottom: 1.5em;
+  color: #1a1a1a;
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  code, kbd, samp, pre {
+    color: #e6edf3;
+  }
+}
+
+/* --- Custom Font for Logo --- */
+@font-face {
+  font-family: 'Bledek';
+  src: url('../fonts/Bledek.otf') format('opentype');
+  font-display: swap;
+}
+
+.logo {
+  font-family: 'Bledek', sans-serif;
+  font-size: 3rem;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #f5f5f5;
+  /* Optionally use Primer blue: #0969da; */
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo a:hover {
+  cursor: pointer;
+}
+
+/* --- Date Styling --- */
+.date {
+  color: var(--muted-text);
+  margin-bottom: -1.75rem;
+  font-size: 0.95em;
+}
+
+/* --- Utility --- */
+pre.highlight {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 6px;
+  padding: 0.2em 0.6em;
+  font-size: 0.9em;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+pre.highlight:hover .copy-btn {
+  opacity: 1;
+}
+
+/* --- Tables --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+  font-size: 1em;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+
+/* --- Images --- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em 0;
+}

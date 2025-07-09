@@ -1,29 +1,19 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link href="/assets/favicon/ufo.ico" rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="/assets/css/style.css?v=">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup Google Analytics -->
-
-
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
-        
-        <div class="logo"><a href="http://localhost:4000/">Not So Localhost</a></div>
-        
+        {% if site.title and site.title != page.title %}
+        <div class="logo"><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></div>
+        {% endif %}
         
         <p>Ever nuked prod at 2 AM and discovered the docs never warned you? Perfect—that’s how you learn, fast.</p>
         
@@ -42,10 +32,18 @@
 
         <h2 class="">Latest Posts</h2>
         <ul class="">
-        
+        {% for post in site.posts limit:10 %}
+        <li class="">
+            <span class="">[{{ post.date | date_to_string: "ordinal", "US" }}]</span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
         </ul>
 
-        
+        {% if site.github.private != true and site.github.license %}
+        <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        </div>
+        {% endif %}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
