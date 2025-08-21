@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en-US" }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/assets/favicon/ufo.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+</head>
+
+<body>
+    <div class="container-lg px-3 my-5 markdown-body">
+        {% if site.title and site.title != page.title %}
+        <div class="logo"><a href="{{ '/' | absolute_url }}">{{ site.title }}</a></div>
+        {% endif %}
+
+        <nav style="display: inline-block; width: 100.00%; margin: 0 0 2em 0;">
+            <ul style="display: flex; flex-direction: row; justify-content: center;
+          list-style: none; padding: 0; margin: 0; align-items: baseline;">
+                <li class="mx-4" style="font-weight: 500;"><a href="/">Home</a></li>
+                <li class="mx-4" style="font-weight: 500;"><a href="/archive">Archive</a></li>
+                <li class="mx-4" style="font-weight: 500;"><a href="/about">About</a></li>
+            </ul>
+        </nav>
+
+        <h1>A  <span style="font-family: 'Bledek', sans-serif; font-size: 1.75em; vertical-align: -0.1em; margin: 0 0.2em;">Rockstar</span> Engineer's Checklist</h1>
+
+        {{ content }}
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+        function isMobileDevice() {
+            return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+        }
+
+        if (!isMobileDevice()) {
+            // Listen for clicks anywhere on page
+            document.addEventListener("click", function (event) {
+                var duration = 2 * 1000;
+                var animationEnd = Date.now() + duration;
+                var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+                function randomInRange(min, max) {
+                    return Math.random() * (max - min) + min;
+                }
+
+                var interval = setInterval(function () {
+                    var timeLeft = animationEnd - Date.now();
+
+                    if (timeLeft <= 0) {
+                        return clearInterval(interval);
+                    }
+
+                    var particleCount = 50 * (timeLeft / duration);
+                    // since particles fall down, start a bit higher than random
+                    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+                    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+                }, 250);
+            });
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+</body>
+
+</html>

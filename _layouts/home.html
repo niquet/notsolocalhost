@@ -1,48 +1,46 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="/assets/favicon/ufo.ico" rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-        {% if site.title and site.title != page.title %}
-        <div class="logo"><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></div>
-        {% endif %}
-        
-        <p>Welcome to my corner of the internet—ain't it fun to be off localhost?</p>
+<html lang="{{ page.lang | default: site.lang | default: " en-US" }}">
 
-        <p>Here you'll find explorations and notes that probably interest future-me more than anyone else.
-           I like to go deep—so don't expect frequent posts. I also break things occasionally that I have to fix.</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <p>Everything here reflects my personal opinions only. No paid content, no guest posts, no affiliate links.</p>
+  <link href="/assets/favicon/ufo.ico" rel="icon" type="image/x-icon">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+</head>
 
-        <p>A few things to live by:<p>
+<body>
+  <div class="container-lg px-3 my-5 markdown-body">
+    {% if site.title and site.title != page.title %}
+    <div class="logo"><a href="{{ '/' | absolute_url }}">{{ site.title }}</a></div>
+    {% endif %}
 
-        <ul>
-            <li><strong>Be persistent.</strong> Most problems are solvable.</li>
-            <li><strong>Keep it simple.</strong> Complexity always sneaks in—fight it.</li>
-            <li><strong>Break things, learn from it.</strong> Make mistakes. Iterate. Improve.</li>
-            <li><strong>Progress over perfection.</strong> Shipping > sitting. Small wins add up.</li>
-            <li><strong>Share your work.</strong> Even if it’s mostly for future-you.</li>
-        </ul>
-      
-        <h2 class="">Latest Posts</h2>
-        <ul class="">
-        {% for post in site.posts limit:10 %}
-        <li class="">
-            <span class="">[{{ post.date | date_to_string: "ordinal", "US" }}]</span>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-        </ul>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-  </body>
+    <nav style="display: inline-block; width: 100.00%; margin: 0 0 2em 0;">
+      <ul style="display: flex; flex-direction: row; justify-content: center;
+          list-style: none; padding: 0; margin: 0; align-items: baseline;">
+        <li class="mx-4" style="font-weight: 500;"><a href="/">Home</a></li>
+        <li class="mx-4" style="font-weight: 500;"><a href="/archive">Archive</a></li>
+        <li class="mx-4" style="font-weight: 500;"><a href="/about">About</a></li>
+      </ul>
+    </nav>
+
+    {{ content }}
+
+    <h2 class="">Latest Notes</h2>
+    <ul class="">
+      {% assign sorted_notes = site.notes | sort: "date" | reverse %}
+      {% for note in sorted_notes limit:10 %}
+      <li class="">
+        <span class="">[{{ note.date | date_to_string: "ordinal", "US" }}]</span>
+        <a href="{{ note.url }}">{{ note.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+    integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+  <script>anchors.add();</script>
+</body>
+
 </html>

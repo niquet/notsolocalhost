@@ -10,9 +10,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: "Not So Localhost" # the name of your site, e.g. ACME Corp.
 
 collections:
-  posts:
+  notes:
     output: true
-    permalink: /posts/:slug/
+    permalink: /n/:slug/
 
 markdown: kramdown
 highlighter: rouge
